@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Products Insert</title>
+</head>
+<body>
+    <div class="container">
+        <div class="col-md-6">
+            <form action="" method="post" enctype="multipart/form-data">
+
+                {% csrf_token %}
+                <label for="">Name</label>
+                <input type="text" class="form-control" name="prod_name" placeholder="Product name" required><br><br>
+
+                <label for="">Brand</label>
+                <input type="text" class="form-control" name="prod_category" placeholder="Product Category" required><br><br>
+
+                <label for="">Quality</label>
+                <input type="number" class="form-control" name="prod_qty" placeholder="Product Quality" required><br><br>
+
+                <label for="">Image</label>
+                <input type="file" class="form-control" name="prod_image" required><br><br>
+
+                <label for="">Price</label>
+                <input type="file" class="form-control" name="prod_price" required><br><br>
+
+                <label for=""></label>
+                <textarea name="prod_desc" placeholder="Product Description" class="form-control" required></textarea>
+
+                <input type="submit" value="Insert">
+            </form>
+
+        </div>
+    </div>
+
+</body>
+</html>

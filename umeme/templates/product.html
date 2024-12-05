@@ -1,0 +1,149 @@
+{% extends 'layout.html' %}
+
+{% load static %}
+
+{% block body %}
+    <main class="main">
+
+        <section id="clients" class="clients section ">
+            <hr class="">
+            <h2 class="fs-2-bold text-center text-secondary bg-warning-subtle">Our Products</h2>
+            <hr>
+
+          <div class="container   " data-aos="fade-up" data-aos-delay="100">
+            <div class="row ">
+                {% for product in products %}
+                    <div class="col-md-6 d-flex  justify-content-center align-items-center mb-4   ">
+
+
+                        <div class="product-card w-100 h-100 border border-rd-20 border-warning mt-2 mb-2 bg-secondary-subtle">
+
+                          <div class=" mb-6 d-flex justify-content-center align-items-center  mb-4  mt-4">
+                              <div class="mt-4 h-100 w-100">
+                                  <img src="{{ product.image.url }}" alt=""  >
+                              </div>
+
+
+                              <div>
+                                  <h2 class="fs-3 ms-3 mb-0">{{ product.name }}</h2>
+                                  <i class="m-4 fs-6 ms-3 mt-0" >Brand: {{ product.description }}</i>
+                                  <hr>
+                                  <p class="fs-4-bold ms-3 "><a href="">KSh {{ product.price }} </a></p>
+                                  <p class="ms-3">{{ product.qty }}</p>
+
+                                  <div class="stars">
+                                        <!-- Full stars -->
+                                      {% for _ in range|slice:":product.full_stars" %}
+                                           <i class="bi bi-star-fill text-warning"></i>
+                                      {% endfor %}
+                                            <!-- Half star -->
+                                      {% if product.half_star %}
+                                          <i class="bi bi-star-half text-warning"></i>
+                                      {% endif %}
+                                            <!-- Empty stars -->
+                                      {% for _ in range|slice:":product.empty_stars" %}
+                                         <i class="bi bi-star text-warning"></i>
+                                      {% endfor %}
+                                      <div class="stars">
+
+                                          <p class="text-success ms-3">
+                                              Rating: {{ product.rating }}
+                                              <i class="bi bi-star-fill"></i>
+                                              <i class="bi bi-star-fill"></i>
+                                              <i class="bi bi-star-fill"></i>
+                                              <i class="bi bi-star-fill"></i>
+                                              <i class="bi bi-star-fill"></i>
+                                          </p>
+                                      </div>
+
+
+                                  </div>
+
+                              </div>
+
+                          </div>
+                          <label for="" class="bi fs-3 ms-2">{{ product.label1 }}</label>
+
+                          <label for="" class="bi fs-3 ms-2">{{ product.label2 }}</label>
+
+                          <label for="" class="bi fs-3 ms-2">{{ product.label3 }}</label>
+
+                          <input type="submit" class="btn btn-warning w-100 mt-3 me-3" value="Order Now" width="200px">
+                          <div>
+                             <h3 class="ms-2">{{ product.desc1 }}</h3>
+                             <p class="text-info ms-2"><a>{{ product.desc2 }}</a></p>
+                             <p class="text-success  ms-2"><a>{{ product.desc3 }}</a></p>
+                          </div>
+                        </div>
+                    </div>
+
+                {% endfor %}
+            </div>
+          </div>
+            <hr>
+        </section><!-- /Clients Section -->
+
+    </main>
+
+{#<main class="main">#}
+{##}
+{#    <section id="clients" class="clients section">#}
+{#        <h2 class="fs-2-bold text-center">Our Products</h2>#}
+{#        <hr>#}
+{##}
+{#      <div class="container" data-aos="fade-up" data-aos-delay="100">#}
+{#        <div class="row">#}
+{#        {% for product in products %}#}
+{#            <div class="col-md-6 d-flex justify-content-center align-items-center mb-4">#}
+{#                <div class="product-card w-100">#}
+{#                    <div class="row mb-6 border-info-subtle">#}
+{#                        <div class="col-md-6 border border-rd-2">#}
+{#                            <img src="{{ product.image.url }}" alt="{{ product.name }}">#}
+{#                        </div>#}
+{#                        <div class="col-md-6">#}
+{#                            <div>#}
+{#                                <h2 class="fs-3 ms-2 mb-0">{{ product.name }}</h2>#}
+{#                                <i class="m-4 fs-6 ms-2 mt-0">Brand: {{ product.description }}</i>#}
+{#                                <hr>#}
+{#                                <p class="fs-4-bold ms-3"><a href="">KSh {{ product.price }}</a></p>#}
+{#                                <p>{{ product.qty }}</p>#}
+{##}
+{#                                <!-- Display stars -->#}
+{#                                <div class="stars">#}
+{#                                    {% for _ in range:product.full_stars %}#}
+{#                                        <i class="bi bi-star-fill text-warning"></i>#}
+{#                                    {% endfor %}#}
+{#                                    {% if product.half_star %}#}
+{#                                        <i class="bi bi-star-half text-warning"></i>#}
+{#                                    {% endif %}#}
+{#                                    {% for _ in range:product.empty_stars %}#}
+{#                                        <i class="bi bi-star text-warning"></i>#}
+{#                                    {% endfor %}#}
+{#                                    <p class="text-success ms-3">Rating: {{ product.rating }}</p>#}
+{#                                </div>#}
+{#                            </div>#}
+{#                        </div>#}
+{#                    </div>#}
+{##}
+{#                    <label for="" class="bi fs-3 ms-2">{{ product.label1 }}</label>#}
+{#                    <label for="" class="bi fs-3 ms-2">{{ product.label2 }}</label>#}
+{#                    <label for="" class="bi fs-3 ms-2">{{ product.label3 }}</label>#}
+{##}
+{#                    <input type="submit" class="btn btn-danger w-100 mt-3" value="Order Now">#}
+{#                    <div>#}
+{#                        <h3>{{ product.desc1 }}</h3>#}
+{#                        <p class="text-info"><a>{{ product.desc2 }}</a></p>#}
+{#                        <p class="text-success mt-0"><a>{{ product.desc3 }}</a></p>#}
+{#                    </div>#}
+{#                </div>#}
+{#            </div>#}
+{#        {% endfor %}#}
+{#        </div>#}
+{#      </div>#}
+{#        <hr>#}
+{#    </section><!-- /Clients Section -->#}
+{##}
+{#</main>#}
+{##}
+
+{% endblock %}

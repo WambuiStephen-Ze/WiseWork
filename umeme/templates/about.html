@@ -1,0 +1,49 @@
+{% extends 'layout.html' %}
+
+{% load static %}
+
+
+{% block body %}
+     <section id="about" class="about section">
+
+      <div class="container " data-aos="fade-up" data-aos-delay="100">
+
+        <div class="row gy-4">
+            {% for abouts in about %}
+          <h3 class="fs-1-bold text-center bg-warning">{{ abouts.name }}</h3><br><br>
+
+          <p>
+              {{ abouts.desc3 }}
+          </p>
+          <div class="col-lg-6 order-1 order-lg-2">
+            <img src="{{ abouts.img.url }}" alt="" width="100%" height="100%" class="m-5">
+          </div><br><br>
+
+          <div class="col-lg-6 order-2 order-lg-1 content">
+
+            <p class="fst-italic">
+                {{ abouts.title }}
+            </p>
+            <ul>
+              <li><i class="bi bi-check2-all"></i> <span>{{ abouts.desc}}</span></li><br>
+
+              <li><i class="bi bi-check2-all"></i> <span>{{ abouts.desc1 }}</span></li><br>
+
+              <li><i class="bi bi-check2-all"></i> <span>{{ abouts.desc2 }}</span></li><br>
+            </ul>
+
+          </div>
+
+            {% endfor %}
+
+        </div>
+
+
+      </div>
+
+    </section><!-- /About Section -->
+
+
+
+{% endblock %}
+
