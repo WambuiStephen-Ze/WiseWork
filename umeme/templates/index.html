@@ -4,13 +4,8 @@
 
 {% block body %}
   <main class="main">
-{#  reqistration form #}
-     <div class="container">
-
-     </div>
 
 
-{#  end form#}
     <!-- Hero Section -->
     <section id="hero" class="hero section dark-background">
       {% for slide in carousel %}
@@ -26,16 +21,6 @@
 
         </div>
 
-{#      {% endfor %}#}
-
-{##}
-{#        <div class="row gy-4 mt-5 justify-content-center" data-aos="fade-up" data-aos-delay="200">#}
-{#          <div class="col-xl-2 col-md-4" data-aos="fade-up" data-aos-delay="300">#}
-{#            #{% for sec in section %}#}
-{#              <div class="icon-box">#}
-{#                  <i class="bi bi-binoculars"></i>#}
-{#                  <h3><a href="">{{ sec.title }}</a></h3>#}
-{#              </div>#}
             {% endfor %}
 
           </div>
@@ -45,9 +30,10 @@
 
     </section><!-- /Hero Section -->
 
-    <section class="register">
-        <a class="btn-getstarted" href="{% url 'register' %}">Get Started</a>
-    </section>
+    <button class="register ms-5 mt-4">
+        <a class="btn-getstarted btn-warning" href="{% url 'registerUser' %}">Get Started</a>
+    </button>
+
 
     <!-- About Section -->
     <section id="about" class="about section">
@@ -147,7 +133,6 @@
           <div class="swiper-pagination"><p>{{ client.desc }}</p></div>
              {% endfor %}
         </div>
-
       </div>
 
     </section><!-- /Clients Section -->
@@ -165,7 +150,7 @@
               <i class="bi bi-archive flex-shrink-0"></i>
                 {% for feature in features %}
               <div>
-                <h4>{{ feature.name  }}</h4>
+                <h4>{{ feature.name  }}</h4><br>
                 <p>{{ feature.desc }}</p>
               </div>
                 {% endfor %}
@@ -207,6 +192,7 @@
                 <h3>{{ service.title }}</h3>
               </a>
               <p>{{ service.desc }}</p>
+              <a class="text-right text-warning ul" href="" >Read More > </a>
 
             </div>
           </div>

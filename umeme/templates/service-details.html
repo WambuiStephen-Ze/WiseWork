@@ -12,7 +12,11 @@
           <div class="row d-flex justify-content-center text-center">
             <div class="col-lg-8">
               <h1>Service Details</h1>
-              <p class="mb-0">Odio et unde deleniti. Deserunt numquam exercitationem. Officiis quo odio sint voluptas consequatur ut a odio voluptatem. Sit dolorum debitis veritatis natus dolores. Quasi ratione sint. Sit quaerat ipsum dolorem.</p>
+              <p class="mb-0">At WiseWork, we specialize in delivering top-notch electrical
+                  installation and maintenance services for industrial, commercial, residential,
+                  and field applications. With a commitment to safety, reliability, and innovation,
+                  we ensure that your electrical systems are not only functional
+                  but also optimized for efficiency and performance.
             </div>
           </div>
         </div>
@@ -20,7 +24,7 @@
       <nav class="breadcrumbs">
         <div class="container">
           <ol>
-            <li><a href="{% url 'index' %}">Home</a></li>
+{#            <li><a href="{% url 'index' %}">Home</a></li>#}
             <li class="current">Service Details</li>
           </ol>
         </div>
@@ -39,11 +43,11 @@
             <div class="service-box">
               <h4>Serices List</h4>
               <div class="services-list">
-                <a href="#" class="active"><i class="bi bi-arrow-right-circle"></i><span>Web Design</span></a>
-                <a href="#"><i class="bi bi-arrow-right-circle"></i><span>Web Design</span></a>
-                <a href="#"><i class="bi bi-arrow-right-circle"></i><span>Product Management</span></a>
-                <a href="#"><i class="bi bi-arrow-right-circle"></i><span>Graphic Design</span></a>
-                <a href="#"><i class="bi bi-arrow-right-circle"></i><span>Marketing</span></a>
+                <a href="#portfolio" class="active"><i class="bi bi-arrow-right-circle"></i><span>Residential</span></a>
+                <a href="#services"><i class="bi bi-arrow-right-circle"></i><span>Industrial</span></a>
+                <a href="{% url 'commercial' %}"><i class="bi bi-arrow-right-circle"></i><span>Commercial</span></a>
+                <a href="{% url 'fieldwork' %}"><i class="bi bi-arrow-right-circle"></i><span>Field Work</span></a>
+
               </div>
             </div><!-- End Services List -->
 
@@ -58,28 +62,37 @@
             <div class="help-box d-flex flex-column justify-content-center align-items-center">
               <i class="bi bi-headset help-icon"></i>
               <h4>Have a Question?</h4>
-              <p class="d-flex align-items-center mt-2 mb-0"><i class="bi bi-telephone me-2"></i> <span>+1 5589 55488 55</span></p>
-              <p class="d-flex align-items-center mt-1 mb-0"><i class="bi bi-envelope me-2"></i> <a href="mailto:contact@example.com">contact@example.com</a></p>
+              <p class="d-flex align-items-center mt-2 mb-0"><i class="bi bi-telephone me-2"></i> <span>
+                  +254 743908621
+              </span></p>
+              <p class="d-flex align-items-center mt-1 mb-0"><i class="bi bi-envelope me-2"></i> <a href="mailto:contact@example.com">info@wisework.ac.ke</a></p>
             </div>
 
           </div>
 
           <div class="col-lg-8 ps-lg-5" data-aos="fade-up" data-aos-delay="200">
+              <h3 class="text-center text-warning">Project Management Team </h3>
             <img src="{% static 'img/services.jpg' %}" alt="" class="img-fluid services-img">
-            <h3>Temporibus et in vero dicta aut eius lidero plastis trand lined voluptas dolorem ut voluptas</h3>
-            <p>
-              Blanditiis voluptate odit ex error ea sed officiis deserunt. Cupiditate non consequatur et doloremque consequuntur. Accusantium labore reprehenderit error temporibus saepe perferendis fuga doloribus vero. Qui omnis quo sit. Dolorem architecto eum et quos deleniti officia qui.
+            <h3>Expert Electrical Solutions for Every Space</h3>
+            <p>In the industrial sector, our expertise includes power distribution, control systems, and preventative
+                maintenance, helping businesses minimize downtime and maximize productivity. For commercial spaces,
+                we design and implement electrical solutions
+                tailored to meet the demands of modern business environments, ensuring seamless operations.
             </p>
             <ul>
-              <li><i class="bi bi-check-circle"></i> <span>Aut eum totam accusantium voluptatem.</span></li>
-              <li><i class="bi bi-check-circle"></i> <span>Assumenda et porro nisi nihil nesciunt voluptatibus.</span></li>
-              <li><i class="bi bi-check-circle"></i> <span>Ullamco laboris nisi ut aliquip ex ea</span></li>
+              <li><i class="bi bi-check-circle"></i> <span>At WiseWork, quality is non-negotiable.</span></li>
+              <li><i class="bi bi-check-circle"></i> <span>Our team of certified professionals combines technical expertise with a customer-first approach to deliver results you can trust.</span></li>
+              <li><i class="bi bi-check-circle"></i> <span>Partner with us for dependable, innovative, and cost-effective electrical solutions tailored to your needs.</span></li>
             </ul>
             <p>
-              Est reprehenderit voluptatem necessitatibus asperiores neque sed ea illo. Deleniti quam sequi optio iste veniam repellat odit. Aut pariatur itaque nesciunt fuga.
+                Our residential services prioritize comfort and safety, providing comprehensive solutions from wiring
+                and lighting installations to advanced home automation systems.
+                Whether you’re building a new home, renovating, or simply upgrading, we bring your vision to life.
             </p>
             <p>
-              Sunt rem odit accusantium omnis perspiciatis officia. Laboriosam aut consequuntur recusandae mollitia doloremque est architecto cupiditate ullam. Quia est ut occaecati fuga. Distinctio ex repellendus eveniet velit sint quia sapiente cumque. Et ipsa perferendis ut nihil. Laboriosam vel voluptates tenetur nostrum. Eaque iusto cupiditate et totam et quia dolorum in. Sunt molestiae ipsum at consequatur vero. Architecto ut pariatur autem ad non cumque nesciunt qui maxime. Sunt eum quia impedit dolore alias explicabo ea.
+              For field work, we thrive in dynamic environments, delivering dependable electrical solutions in
+                remote or challenging locations. With a focus on precision and adaptability, we handle everything
+                from site power setups to complex installations.
             </p>
           </div>
 
@@ -88,6 +101,47 @@
       </div>
 
     </section><!-- /Service Details Section -->
+
+    <section id="services" class="services section bg-secondary-subtle">
+
+      <!-- Section Title -->
+    {% if service %}
+      <div class="container section-title text-center" data-aos="fade-up">
+        <h2>{{ service.title }}</h2>
+        <p>{{ service.desc }}</p>
+      </div>
+        {% endif %}
+        <!-- End Section Title -->
+
+      <div class="container">
+
+        <div class="row gy-4 warning">
+            {% for service in services %}
+          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
+            <div class="service-item position-relative">
+
+               <div class="features-image col-lg-6  " data-aos="fade-up" data-aos-delay="100">
+                   <img src="{{ service.image.url }}" alt="" width="320px">
+               </div>
+
+
+              <a href="service-details.html" class="stretched-link">
+                <h3>{{ service.title }}</h3>
+              </a>
+              <p>{{ service.desc }}</p>
+
+            </div>
+          </div>
+            {% endfor %}<!-- End Service Item -->
+
+
+        </div>
+
+      </div>
+
+    </section><!-- /Services Section -->
+
+
 
   </main>
 

@@ -940,13 +940,12 @@ section,
 .clients .swiper-slide img {
   opacity: 0.5;
   transition: 0.3s;
-  /*filter: brightness(100);*/
-  align-self: flex-end;
+  filter: grayscale(100);
 }
 
 .clients .swiper-slide img:hover {
-  /*filter: none;*/
-  opacity: 0;
+  filter: none;
+  opacity: 1;
 }
 
 .clients .swiper-wrapper {

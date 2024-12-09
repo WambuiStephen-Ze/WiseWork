@@ -1,19 +1,25 @@
 from django.contrib import admin
 
-from . models import Log, Carousel, Section, Abote, About, Skills, Services,Contact, Call, Tramp, Testimony,Time, Team, Features, Portfolio, Status, Client_status, Clients, Location, Contact_Us, Product, Register, Login, Profile, Logout
-
+from .models import Log, Carousel, Section, Abote, About, Skills, Services, Contact, Call, Tramp, Testimony, Time, Team, \
+    Features, Portfolio, Status, Client_status, Clients, Location, Contact_Us, Product, Reside, Omesa, Field, Header, Indicate, Main
 
 # Register your models here.
 
 admin.site.register(Log)
 
+admin.site.register(Header)
+admin.site.register(Reside)
+admin.site.register(Omesa)
+admin.site.register(Field)
+admin.site.register(Indicate)
+
 admin.site.register(Carousel)
 admin.site.register(Section)
 
-admin.site.register(Register)
-admin.site.register(Login)
-admin.site.register(Profile)
-admin.site.register(Logout)
+admin.site.register(Main)
+# admin.site.register(Login)
+# admin.site.register(Profile)
+# admin.site.register(Logout)
 
 admin.site.register(About)
 admin.site.register(Abote)

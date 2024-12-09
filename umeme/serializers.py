@@ -1,6 +1,8 @@
 #api(application presentation interface) process of converting models into json format
 from rest_framework import serializers
-from . models import Log, Carousel, Section, Abote, About, Skills, Services,Contact, Call, Tramp, Testimony,Time, Team, Features, Portfolio, Status, Client_status, Clients, Location, Contact_Us, Product, Register, Login, Profile
+from . models import (Log, Carousel, Section, Abote, About, Skills, Services,Contact, Call, Tramp, Testimony,Time, Team, Features, Portfolio, Status, Client_status, Clients, Location, Contact_Us, Product)
+# , Register, Login
+# , Profile, Logout)
 
 class logSerializer(serializers.ModelSerializer):
     class Meta:
@@ -11,22 +13,26 @@ class CarouselSerializer(serializers.ModelSerializer):
     class Meta:
         model = Carousel
         fields = '__all__'
-
-class RegisterSerializer(serializers.ModelSerializer):
-    class Meta:
-        model = Register
-        fields = '__all__'
-
-class LoginSerializer(serializers.ModelSerializer):
-    class Meta:
-        model = Login
-        fields = '__all__'
-
-class ProfileSerializer(serializers.ModelSerializer):
-    class Meta:
-        model = Profile
-        fields = '__all__'
-
+#
+# class RegisterSerializer(serializers.ModelSerializer):
+#     class Meta:
+#         model = Register
+#         fields = '__all__'
+#
+# class LoginSerializer(serializers.ModelSerializer):
+#     class Meta:
+#         model = Login
+#         fields = '__all__'
+#
+# class ProfileSerializer(serializers.ModelSerializer):
+#     class Meta:
+#         model = Profile
+#         fields = '__all__'
+#
+# class LogoutSerializer(serializers.ModelSerializer):
+#     class Meta:
+#         model = Logout
+#         fields = '__all__'
 
 class SectionSerializer(serializers.ModelSerializer):
     class Meta:

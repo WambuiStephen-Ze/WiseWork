@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <div class="container mt-5">
+                <h2>Products Update</h2>
+        <div class="col-md-6">
+               <table>
+                        {% csrf_token %}
+                        <tr>
+                            <th>ID</th>
+                            <th>Name</th>
+                            <th>Price</th>
+                            <th>Category</th>
+                            <th>Quantity</th>
+                            <th>Description </th>
+                            <th>Images</th>
+                        </tr>
+                        <tr>
+                            <td>{{ prod.ID }}</td>
+                            <td>{{ prod.Name }}</td>
+                            <td>{{ prod.Price }}</td>
+                            <td>{{ prod.Category }}</td>
+                            <td>{{ prod.Qty }}</td>
+                            <td>{{ prod.Desc }}</td>
+                            <td>
+                                <img src="{{ prod.Img }}" alt="">
+                            </td>
+                            <td><a href="{% url 'insert' %}">INSERT</a></td>
+                            <td><a href="{% url 'fetch' %}">VIEW</a></td>
+                            <td><a href="{% url 'update_product' product.id %}">UPDATE</a></td>
+                            <td><a href="{% url 'delete_product' product.id %}">DELETE</a></td>
+
+                        </tr>
+               </table>
+
+        </div>
+    </div>
+
+</body>
+</html>

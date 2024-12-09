@@ -12,7 +12,7 @@
   <meta name="keywords" content="">
 
   <!-- Favicons -->
-  <link href="{% static 'img/favicon.png' %}" rel="icon">
+  <link href="https://pngtree.com/freepng/modern-solutions-letter-w_3619893.html" rel="icon">
   <link href="{% static 'img/apple-touch-icon.png' %}" rel="apple-touch-icon">
 
   <!-- Fonts -->
@@ -42,20 +42,20 @@
 
 <body class="index-page">
 
-  <header id="header" class="header d-flex align-items-center fixed-top">
+  <header id="header" class="header d-flex align-items-center fixed-top bg-success">
 
     <div class="container-fluid container-xl position-relative d-flex align-items-center justify-content-between">
 
         <a href="" class="logo d-flex align-items-center me-auto me-lg-0"></a>
         <a href="" class="logo d-flex align-items-center me-auto me-lg-0"></a>
 
-        {% if logs %}
+
         <a href="" class="logo d-flex align-items-center me-auto me-lg-0">
         <!-- Uncomment the line below if you also wish to use an image logo -->
-         <img src="{{ logs.image.url }}" alt="WiseWork" width="50px">
-        <h1 class="sitename">{{ logs.title }}</h1>
+{#         <img src="{% static 'img/' %} " alt="WiseWork" width="50px">#}
+        <h1 class="sitename">WiseWork</h1>
       </a>
-        {% endif %}
+
 
 
 
@@ -68,27 +68,24 @@
           <li><a href="{% url 'team' %}">Team</a></li>
           <li class="dropdown"><a href="{% url 'services' %}"><span>Services</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
             <ul>
-              <li><a href="">Residential</a></li>
-              <li class="dropdown"><a href="#"><span>Deep Dropdown</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
-                <ul>
-                  <li><a href="">Deep Dropdown 1</a></li>
-                  <li><a href="">Deep Dropdown 2</a></li>
-                  <li><a href="">Deep Dropdown 3</a></li>
-                  <li><a href="">Deep Dropdown 4</a></li>
-                  <li><a href="">Deep Dropdown 5</a></li>
-                </ul>
-              </li>
-              <li><a href="">Industrial</a></li>
-              <li><a href="">Commercial</a></li>
-              <li><a href="">Field Work</a></li>
+              <li><a href="{% url 'residential' %}">Residential</a></li>
+              <li><a href="{% url 'industrial' %}">Industrial</a></li>
+              <li><a href="{% url 'commercial' %}">Commercial</a></li>
+              <li><a href="{% url 'fieldwork' %}">Field Work</a></li>
             </ul>
           </li>
           <li><a href="{% url 'contact' %}">Contact</a></li>
         </ul>
+
         <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
-      </nav>
-
-
+     </nav>
+        {%if user.is_authenticated %}
+            <li>Hello, {{ user.username }}</li>
+            <li><a href="{% url 'logout' %}" class="hello-msg">Logout</a></li>
+        {% else %}
+            <li><a class="btn-getstarted" href="{% url 'registerUser' %}">Get Started</a></li>
+            <li><a class="btn-getstarted" href="{% url 'login' %}">Login</a></li>
+        {% endif %}
 
     </div>
 
@@ -108,14 +105,15 @@
             <a href="" class="logo d-flex align-items-center">
               <span class="sitename">WiseWork</span>
             </a>
-              {% for locate in location  %}
+              {% if location  %}
             <div class="footer-contact pt-3">
               <p>{{ lacate.address }}</p>
               <p>{{ locate.country}}</p>
-              <p class="mt-3"><strong>Phone:</strong> <span>{{ locate.phone }}</span></p>
+{#              <p class="mt-3"><strong>Phone:</strong> <span>{{ locate.phone }}</span></p>#}
+              <p class="mt-3"><strong>Phone:</strong> <span>+254743000001</span></p>
               <p><strong></strong> <span>{{ locate.email }}</span></p>
             </div>
-              {% endfor %}
+              {% endif %}
             <div class="social-links d-flex mt-4">
               <a href=""><i class="bi bi-twitter-x"></i></a>
               <a href=""><i class="bi bi-facebook"></i></a>
@@ -130,19 +128,24 @@
               <li><i class="bi bi-chevron-right"></i> <a href="#"> Home</a></li>
               <li><i class="bi bi-chevron-right"></i> <a href="#"> About us</a></li>
               <li><i class="bi bi-chevron-right"></i> <a href="#"> Services</a></li>
-              <li><i class="bi bi-chevron-right"></i> <a href="#"> Terms of service</a></li>
-              <li><i class="bi bi-chevron-right"></i> <a href="#"> Privacy policy</a></li>
+              <li><i class="bi bi-chevron-right"></i> <a href="#"> Products</a></li>
+              <li><i class="bi bi-ch
+              `
+
+
+
+              evron-right"></i> <a href="#"> Contacts</a></li>
             </ul>
           </div>
 
           <div class="col-lg-2 col-md-3 footer-links">
             <h4>Our Services</h4>
             <ul>
-              <li><i class="bi bi-chevron-right"></i> <a href="#"> Web Design</a></li>
-              <li><i class="bi bi-chevron-right"></i> <a href="#"> Web Development</a></li>
+              <li><i class="bi bi-chevron-right"></i> <a href="#"> Installation</a></li>
+              <li><i class="bi bi-chevron-right"></i> <a href="#"> Maintenance</a></li>
               <li><i class="bi bi-chevron-right"></i> <a href="#"> Product Management</a></li>
-              <li><i class="bi bi-chevron-right"></i> <a href="#"> Marketing</a></li>
-              <li><i class="bi bi-chevron-right"></i> <a href="#"> Graphic Design</a></li>
+              <li><i class="bi bi-chevron-right"></i> <a href="#"> Quality Assurance</a></li>
+              <li><i class="bi bi-chevron-right"></i> <a href="#"> Project Design</a></li>
             </ul>
           </div>
 
@@ -163,13 +166,13 @@
 
     <div class="copyright">
       <div class="container text-center">
-        <p>© <span>Copyright</span> <strong class="px-1 sitename">GP</strong> <span>All Rights Reserved</span></p>
+        <p>© <span>Copyright</span> <strong class="px-1 sitename">WiseWork</strong> <span>All Rights Reserved</span></p>
         <div class="credits">
           <!-- All the links in the footer should remain intact. -->
           <!-- You can delete the links only if you've purchased the pro version. -->
           <!-- Licensing information: https://bootstrapmade.com/license/ -->
           <!-- Purchase the pro version with working PHP/AJAX contact form: [buy-url] -->
-          Designed by <a href="https://bootstrapmade.com/">WorkWise</a>
+          Designed by <a href="https://bootstrapmade.com/">WiseWork</a>
         </div>
       </div>
     </div>

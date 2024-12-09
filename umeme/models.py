@@ -1,5 +1,8 @@
 from django.db import models
 
+# from umeme.views import residential
+
+
 # logo medel
 
 class Log(models.Model):
@@ -8,15 +11,14 @@ class Log(models.Model):
 
     def __str__(self):
         return self.title
-#
-# class Main(models.Model):
-#     name = models.CharField(max_length=50)
-#     title = models.CharField(max_length=50)
-#     image = models.ImageField(upload_to='images/')
-#     desc = models.TextField()
-#
-#     def __str__(self):
-#         return self.name
+
+class Main(models.Model):
+    name = models.CharField(max_length=100, default='image')
+
+    image = models.ImageField(upload_to='images/', default='image')
+
+    def __str__(self):
+        return self.name
 
 
 
@@ -93,7 +95,7 @@ class Client_status(models.Model):
 
 class Features(models.Model):
     name = models.CharField(max_length=50)
-    desc=models.CharField(max_length=50)
+    desc=models.TextField()
 
     def __str__(self):
         return self.name
@@ -111,6 +113,50 @@ class Services(models.Model):
 
     def __str__(self):
         return self.title
+
+    # services models
+
+# services header
+class Header(models.Model):
+    title = models.CharField(max_length=50)
+    desc=models.TextField()
+
+# residential
+class Reside(models.Model):
+    title = models.CharField(max_length=50)
+    desc = models.TextField()
+    image = models.ImageField(upload_to='images/', default='none')
+
+    def __str__(self):
+        return self.title
+
+
+# industrial
+class Indicate(models.Model):
+        title = models.CharField(max_length=50)
+        desc = models.TextField()
+        image = models.ImageField(upload_to='images/', default='none')
+
+        def __str__(self):
+            return self.title
+
+# commercial
+class Omesa(models.Model):
+
+    title = models.CharField(max_length=50)
+    desc = models.TextField()
+    image = models.ImageField(upload_to='images/', default='none')
+
+    def __str__(self):
+        return self.title
+# fieldwork
+class Field(models.Model):
+        title = models.CharField(max_length=50)
+        desc = models.TextField()
+        image = models.ImageField(upload_to='images/', default='none')
+
+        def __str__(self):
+            return self.title
 
 
 # call to action models
@@ -240,40 +286,3 @@ class Product(models.Model):
     def __str__(self):
         return self.name
 
-
-class Register(models.Model):
-    first_name = models.CharField(max_length=50)
-    last_name = models.CharField(max_length=50)
-    username = models.CharField(max_length=50)
-    email = models.CharField(max_length=50)
-    password = models.CharField(max_length=50)
-    confirm_password = models.CharField(max_length=50)
-    conditions = models.CharField(max_length=50)
-
-    def __str__(self):
-        return self.username
-
-class Login(models.Model):
-    username = models.CharField(max_length=50)
-    password = models.CharField(max_length=50)
-
-    def __str__(self):
-        return self.username
-
-
-class Profile(models.Model):
-    name = models.CharField(max_length=50)
-    address = models.CharField(max_length=50)
-    email = models.CharField(max_length=50)
-    phone1 = models.CharField(max_length=50)
-    phone2 = models.CharField(max_length=50)
-    county = models.CharField(max_length=50)
-    city = models.CharField(max_length=50)
-
-    def __str__(self):
-        return self.name
-
-class Logout(models.Model):
-    username = models.CharField(max_length=50)
-
-    def __str__(self):

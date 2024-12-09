@@ -1,0 +1,39 @@
+{% extends 'layout.html' %}
+{% load static %}
+
+{% block body %}
+
+   <div class="container mt-5">
+        <h2>Product Insert</h2>
+        <div class="col-md-6">
+            <form action="/insert_data/" method="post" enctype="multipart/form-data">
+                {% csrf_token %}
+
+                <input type="text" name="prod_name" placeholder="Product Name" class="form-control" required>
+                <br/>
+
+                <input type="number" name=prod_price placeholder="Price" class="form-control" required>
+                <br/>
+
+                <input type="text" name=prod_category placeholder="Category" class="form-control" required>
+                <br/>
+
+                <input type="number" name=prod_qty placeholder="Quality" class="form-control" required>
+                <br/>
+
+
+                <input type="file" name=prod_img class="form-control" required>
+                <br/>
+
+                <textarea placeholder="Description"  name=prod_desc class="form-control" required>
+
+                </textarea>
+                <br/>
+
+                <input type="submit" value="Save" class="btn btn-success">
+
+            </form>
+        </div>
+   </div>
+
+{% endblock %}

@@ -1,0 +1,95 @@
+{% extends 'layout.html' %}
+{% load static %}
+
+{% block body %}
+     <!-- Portfolio Section -->
+    <section id="portfolio" class="portfolio section">
+
+      <!-- Section Title -->
+    {% if portfolios %}
+      <div class="container section-title" data-aos="fade-up">
+        <h2>{{ portfolios.head }}</h2>
+        <p>{{ portfolios.desc }}</p>
+      </div>
+    {% endif %}
+        <!-- End Section Title -->
+
+      <div class="container">
+
+        <div class="isotope-layout" data-default-filter="*" data-layout="masonry" data-sort="original-order">
+        {% for portfolio in portfo %}
+
+          <ul class="portfolio-filters isotope-filters  flex-wrap gap-3"  data-aos="fade-up" data-aos-delay="100"  data-aos="fade-up" data-aos-delay="100">
+{#            {% if portfo %}#}
+              <li data-filter="*" class="filter-active ">{{ portfolio.slide }}</li>
+{#            {% endif %}#}
+{#            <li data-filter="*" class="filter-active ">{{ portfolio.slide1 }}</li>#}
+          </ul><!-- End Portfolio Filters -->
+        {% endfor %}
+
+          <div class="row gy-4 isotope-container" data-aos="fade-up" data-aos-delay="200">
+              {% for port in portfolio %}
+
+            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-app  ">
+              <img src="{{ port.image.url }}" class="img-fluid" alt="">
+              <div class="portfolio-info">
+                <h4>{{ port.Name }}</h4>
+                <p>{{ port.desc }}</p>
+                <a href="{{ port.img.url }}" title="App 1" data-gallery="portfolio-gallery-app" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
+                <a href="portfolio-details.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
+              </div>
+            </div><!-- End Portfolio Item -->
+
+              {% endfor %}
+
+
+          </div><!-- End Portfolio Container -->
+
+        </div>
+
+      </div>
+
+    </section><!-- /Portfolio Section -->
+<!-- Services Section -->
+    <section id="services" class="services section bg-secondary-subtle">
+
+      <!-- Section Title -->
+    {% if skills %}
+      <div class="container section-title text-center" data-aos="fade-up">
+        <h2>{{ skills.title }}</h2>
+        <p>{{ skills.desc }}</p>
+      </div>
+        {% endif %}
+        <!-- End Section Title -->
+
+      <div class="container">
+
+        <div class="row gy-4 warning">
+            {% for service in services %}
+          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
+            <div class="service-item position-relative">
+
+               <div class="features-image col-lg-6  " data-aos="fade-up" data-aos-delay="100">
+                   <img src="{{ service.image.url }}" alt="" width="320px">
+               </div>
+
+
+              <a href="service-details.html" class="stretched-link">
+                <h3>{{ service.title }}</h3>
+              </a>
+              <p>{{ service.desc }}</p>
+
+            </div>
+          </div>
+            {% endfor %}<!-- End Service Item -->
+
+
+        </div>
+
+      </div>
+
+    </section><!-- /Services Section -->
+
+
+
+{% endblock %}

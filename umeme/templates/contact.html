@@ -6,6 +6,12 @@
 
 {% block body %}
     <main>
+    {% for message in messages %}
+    <div class="alert alert-warning alert-dismissible fade show" role="alert">
+    <p>{{ message }}</p>
+      <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+    {% endfor %}
         <section id="contact" class="contact section">
 
           <!-- Section Title -->
@@ -61,11 +67,11 @@
                     </div>
 
                     <div class="col-md-12 text-center">
-                      <div class="loading">Loading</div>
-                      <div class="error-message"></div>
-                      <div class="sent-message">Your message has been sent. Thank you!</div>
+{#                      <div class="loading">Loading</div>#}
+{#                      <div class="error-message"></div>#}
+{#                      <div class="sent-message">Your message has been sent. Thank you!</div>#}
 
-                      <button type="submit">Send Message</button>
+                        <button type="submit"><a>Send Message</a></button>
                     </div>
 
                   </div>
